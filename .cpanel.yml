@@ -1,7 +1,9 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/u6140596/public_html/
+    - export DEPLOYPATH=/home/u6140596/public_html/duniahewan
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp detail.php $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
