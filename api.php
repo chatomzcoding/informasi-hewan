@@ -4,6 +4,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://sistem.zelnara.com/api/hewan',
+  CURLOPT_FAILONERROR => true,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -18,4 +19,3 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 $listdata = json_decode($response);
-

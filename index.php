@@ -68,6 +68,7 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <?php 
+                        if (count($listdata) > 0) {
                         foreach ($listdata as $item) {
                             ?>
                             <!-- Portfolio Item 1-->
@@ -117,6 +118,7 @@
                                 </div>
                             </div>
                         <?php
+                        }
                         }
                     ?>
                 </div>
