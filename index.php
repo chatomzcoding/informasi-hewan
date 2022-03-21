@@ -1,3 +1,6 @@
+<?php 
+    include('api.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -65,31 +68,7 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <?php 
-                        $curl = curl_init();
-
-                        curl_setopt_array($curl, array(
-                          CURLOPT_URL => 'https://chatomz.bunefit.com/api/hewan',
-                          CURLOPT_RETURNTRANSFER => true,
-                          CURLOPT_ENCODING => '',
-                          CURLOPT_MAXREDIRS => 10,
-                          CURLOPT_TIMEOUT => 0,
-                          CURLOPT_FOLLOWLOCATION => true,
-                          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                          CURLOPT_CUSTOMREQUEST => 'GET',
-                          CURLOPT_POSTFIELDS => 'API_KEY=%242y%2410%24yA4qXnZzEIjaW7WE2so98O4oJORl%2F%2FOVdJIDLiAU8yWaAQk804sCK',
-                          CURLOPT_HTTPHEADER => array(
-                            'Content-Type: application/x-www-form-urlencoded'
-                          ),
-                        ));
-                        
-                        $data = curl_exec($curl);
-                        
-                        curl_close($curl);
-                        // echo $response;
-                        
-                        $data = json_decode($data);
-                    
-                        foreach ($data as $item) {
+                        foreach (listhewan() as $item) {
                             ?>
                             <!-- Portfolio Item 1-->
                             <div class="col-md-6 col-lg-4 mb-5">
@@ -97,7 +76,7 @@
                                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-search fa-3x"></i> <br><small><?=ucwords($item->nama)?></small> </div>
                                     </div>
-                                    <img class="img-fluid" src="https://chatomz.bunefit.com/public/img/company/informasi/hewan/<?=$item->gambar?>" alt="gambar hewan" />
+                                    <img class="img-fluid" src="https://sistem.zelnara.com/public/img/company/informasi/hewan/<?=$item->gambar?>" alt="gambar hewan" />
                                 </div>
                             </div>
                             <div class="portfolio-modal modal fade" id="portfolioModal<?=$item->id?>" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
