@@ -70,6 +70,7 @@
                     <?php 
                         if (count($listdata) > 0) {
                         foreach ($listdata as $item) {
+                            $detail = json_decode($item->detail);
                             ?>
                             <!-- Portfolio Item 1-->
                             <div class="col-md-6 col-lg-4 mb-5">
@@ -92,7 +93,7 @@
                                                         <div class="divider-custom">
                                                             <div class="divider-custom-line"></div>
                                                             <!-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> -->
-                                                            <div class="divider-custom-icon fst-italic"><?=$item->nama_latin?></div>
+                                                            <div class="divider-custom-icon fst-italic"><?=$detail->nama_latin?></div>
                                                             <div class="divider-custom-line"></div>
                                                         </div>
                                                     </div>
@@ -108,7 +109,7 @@
                                                         </button> -->
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 p-2">
-                                                        <h5 class="mb-4"><?=$item->tentang?></h5>
+                                                        <h5 class="mb-4"><?=$detail->tentang?></h5>
                                                         <a href="detail.php?id=<?=$item->id?>">Daftar Jenis <?=$item->nama?></a>
                                                     </div>
                                                 </div>
