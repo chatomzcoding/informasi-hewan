@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/u6140596/public_html/duniahewan
+    - export DEPLOYPATH=/home/u1662612/public_html/info-hewan
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp detail.php $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
