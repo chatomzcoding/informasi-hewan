@@ -4,7 +4,7 @@ $id = $_GET['id'];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://chatomz.bunefit.com/api/hewan/'.$id,
+  CURLOPT_URL => 'https://sistem.zelnara.com/api/hewan/'.$id,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -97,14 +97,15 @@ $data = json_decode($response);
                             <?php
                         } else {
                             foreach ($data->jenis as $item) {
+                                $detail = json_decode($item->detail_sub);
                                 ?>
                                 <!-- Portfolio Item 1-->
                                 <div class="col-md-6 col-lg-4 mb-5">
                                     <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal<?=$item->id?>">
                                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-search fa-3x"></i> <br><small><?=ucwords($item->nama_jenis)?></small> </div>
+                                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-search fa-3x"></i> <br><small><?=ucwords($item->nama_sub)?></small> </div>
                                         </div>
-                                        <img class="img-fluid" src="https://chatomz.bunefit.com/public/img/company/informasi/hewan/<?=$item->gambar_jenis?>" alt="gambar hewan" />
+                                        <img class="img-fluid" src="https://sistem.zelnara.com/public/img/company/informasi/hewan/<?=$item->gambar_sub?>" alt="gambar hewan" />
                                     </div>
                                 </div>
                                 <div class="portfolio-modal modal fade" id="portfolioModal<?=$item->id?>" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
@@ -115,11 +116,11 @@ $data = json_decode($response);
                                                 <div class="container">
                                                     <div class="row justify-content-center">
                                                         <div class="col-lg-12 col-md-12 text-center">
-                                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-2"><?=$item->nama_jenis?></h2>
+                                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-2"><?=$item->nama_sub?></h2>
                                                             <div class="divider-custom">
                                                                 <div class="divider-custom-line"></div>
                                                                 <!-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> -->
-                                                                <div class="divider-custom-icon fst-italic"><?=$item->nama_latin_jenis?></div>
+                                                                <div class="divider-custom-icon fst-italic"><?=$detail->nama_latin?></div>
                                                                 <div class="divider-custom-line"></div>
                                                             </div>
                                                         </div>
@@ -127,7 +128,7 @@ $data = json_decode($response);
                                                             <!-- Portfolio Modal - Title-->
                                                             <!-- Icon Divider-->
                                                             <!-- Portfolio Modal - Image-->
-                                                            <img class="img-fluid rounded mb-5" src="https://chatomz.bunefit.com/public/img/company/informasi/hewan/<?=$item->gambar_jenis?>" alt="..." />
+                                                            <img class="img-fluid rounded mb-5" src="https://chatomz.bunefit.com/public/img/company/informasi/hewan/<?=$item->gambar_sub?>" alt="..." />
                                                             <!-- Portfolio Modal - Text-->
                                                             <!-- <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                                                 <i class="fas fa-times fa-fw"></i>
@@ -135,7 +136,7 @@ $data = json_decode($response);
                                                             </button> -->
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 p-2">
-                                                            <h5 class="mb-4"><?=$item->tentang_jenis?></h5>
+                                                            <h5 class="mb-4"><?=$detail->tentang?></h5>
                                                         </div>
                                                     </div>
                                                 </div>
