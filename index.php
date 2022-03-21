@@ -68,7 +68,7 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <?php 
-                        foreach (listhewan() as $item) {
+                        foreach ($listdata as $item) {
                             ?>
                             <!-- Portfolio Item 1-->
                             <div class="col-md-6 col-lg-4 mb-5">

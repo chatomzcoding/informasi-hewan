@@ -1,10 +1,5 @@
 <?php
 
-// $api_categories_list = 'https://sistem.zelnara.com/api/hewan';
-    // $json_list = @file_get_contents($api_categories_list);
-// $json_list = json_decode($json_list);
-// print_r($json_list);
-// die();
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -21,5 +16,6 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
-die();
+
+$listdata = json_decode($response);
+
