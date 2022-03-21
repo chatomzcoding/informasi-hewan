@@ -2,4 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/u1662612/public_html/info-hewan
-     - /usr/bin/rsync -Paz * $DEPLOYPATH --delete
+    - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp detail.php $DEPLOYPATH
+    - /bin/cp api.php $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
